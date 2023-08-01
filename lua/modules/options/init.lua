@@ -1,3 +1,4 @@
+-- Options module
 
 local options = {}
 
@@ -11,6 +12,7 @@ options.list = {
 	sidescrolloff = 10,
 	signcolumn = 'yes',
 	shiftwidth = 4,
+	showmode = false,
 	smartcase = true,
 	swapfile = false,
 	tabstop = 4,
