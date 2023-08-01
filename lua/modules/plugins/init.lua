@@ -25,7 +25,14 @@ plugins.list = {
 		enabled = true,
 		configName = 'lualine',
 		description = 'Statusline plugin'
-	}
+	},
+
+	{
+		'akinsho/bufferline.nvim',
+		enabled = true,
+		configName = 'bufferline',
+		description = 'Bufferline plugin'
+	},
 }
 
 plugins.set = function()
