@@ -1,3 +1,4 @@
+-- Autocommands module
 
 local autocommands = {}
 
