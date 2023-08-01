@@ -1,3 +1,4 @@
+-- Functions module
 
 local functions = {}
 
