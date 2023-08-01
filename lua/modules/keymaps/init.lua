@@ -27,6 +27,8 @@ keymaps.normalMode = {
 		groupName = 'Quick actions',
 		{'<leader>ss', ':w<cr>', keymaps.snr, 'Write current buffer'},
 		{'<leader>sa', ':wa<cr>', keymaps.snr, 'Write all open buffers'},
+		{'<leader>qq', ':lua NvimConfig.functions.closeBuffer()<cr>', keymaps.snr, 'Close current buffer'},
+		{'<leader>qa', ':qa<cr>', keymaps.snr, 'Close all open buffers'},
 	},
 
 	{

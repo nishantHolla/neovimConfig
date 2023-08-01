@@ -5,6 +5,7 @@ NvimConfig = {}
 
 NvimConfig.options = require('modules.options')
 NvimConfig.autocommands = require('modules.autocommands')
+NvimConfig.functions = require('modules.functions')
 NvimConfig.keymaps = require('modules.keymaps')
 NvimConfig.theme = require('modules.theme')
 
