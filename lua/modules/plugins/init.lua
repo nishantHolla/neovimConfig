@@ -33,6 +33,14 @@ plugins.list = {
 		configName = 'bufferline',
 		description = 'Bufferline plugin'
 	},
+
+	{
+		'jiangmiao/auto-pairs',
+		enabled = true,
+		configName = nil,
+		description = 'Autopair plugin'
+	},
+	
 }
 
 plugins.set = function()
