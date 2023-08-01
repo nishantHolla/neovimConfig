@@ -1,3 +1,4 @@
+-- Keymaps module
 
 local keymaps = {}
 
