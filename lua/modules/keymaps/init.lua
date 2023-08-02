@@ -52,6 +52,12 @@ keymaps.normalMode = {
 		{'<esc>', ':nohl<cr>', keymaps.snr, 'Remove search highlights'},
 	},
 
+	{
+		groupName = 'Nvim lf plugin',
+		plugin = 'lf',
+		{'<leader><space>', ':Lf<cr>', keymaps.snr, 'Open file manager'}
+	}
+
 }
 
 keymaps.insertMode = {
@@ -83,11 +89,18 @@ keymaps.visualMode = {
 
 keymaps.setForMode = function(_mode, _maps)
 	for _, set in pairs(_maps) do
+		if set.plugin and NvimConfig.plugins.list[set.plugin].enabled == false then
+			goto continue
+		end
+
 		set.groupName = nil
+		set.plugin = nil
 
 		for _, map in pairs(set) do
 			makeKeymap(_mode, map[1], map[2], map[3])
 		end
+
+		::continue::
 	end
 end
 
