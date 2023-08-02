@@ -55,12 +55,23 @@ keymaps.normalMode = {
 	{
 		groupName = 'Nvim lf plugin',
 		plugin = 'lf',
-		{'<leader><space>', ':Lf<cr>', keymaps.snr, 'Open file manager'}
+		{'<leader>;', ':Lf<cr>', keymaps.snr, 'Open file manager'}
+	},
+
+	{
+		groupName = 'Toggleterm plugin',
+		plugin = 'toggleTerm',
+		{"<leader>'", ':ToggleTerm<cr>', keymaps.snr, 'Toggle terminal'}
 	}
 
 }
 
 keymaps.insertMode = {
+	{
+		groupName = 'Mode movement',
+		{'<leader><leader>', '<esc>', keymaps.snr, 'Move to normal mode'}
+	},
+
 	{
 		groupName = 'Text movement',
 		{'<a-h>', '<left>', keymaps.snr, 'Move left by one character'},
@@ -87,6 +98,27 @@ keymaps.visualMode = {
 	},
 }
 
+keymaps.terminalMode = {
+	{
+		groupName = 'Mode movement',
+		{'<leader><leader>', [[<c-\><c-n>]], keymaps.snr, 'Move to normal mode'}
+	},
+
+	{
+		groupName = 'Split movement',
+		{'<a-h>', [[<c-\><c-n><c-w>h]], keymaps.snr, 'Move to left split'},
+		{'<a-j>', [[<c-\><c-n><c-w>j]], keymaps.snr, 'Move to bottom split'},
+		{'<a-k>', [[<c-\><c-n><c-w>k]], keymaps.snr, 'Move to top split'},
+		{'<a-l>', [[<c-\><c-n><c-w>l]], keymaps.snr, 'Move to right split'},
+	},
+
+	{
+		groupName = 'Toggleterm plugin',
+		plugin = 'toggleTerm',
+		{"<leader>'", [[<c-\><c-n>:ToggleTerm<cr>]], keymaps.snr, 'Toggle terminal'}
+	}
+}
+
 keymaps.setForMode = function(_mode, _maps)
 	for _, set in pairs(_maps) do
 		if set.plugin and NvimConfig.plugins.list[set.plugin].enabled == false then
@@ -110,6 +142,7 @@ keymaps.set = function()
 	keymaps.setForMode('n', keymaps.normalMode)
 	keymaps.setForMode('i', keymaps.insertMode)
 	keymaps.setForMode('v', keymaps.visualMode)
+	keymaps.setForMode('t', keymaps.terminalMode)
 end
 
 return keymaps
