@@ -119,6 +119,27 @@ keymaps.terminalMode = {
 	}
 }
 
+keymaps.lspKeymaps = function(ev)
+	local opts = {buffer = ev.buf}
+	makeKeymap('n', 'gD', vim.lsp.buf.declaration, opts)
+	makeKeymap('n', 'gd', vim.lsp.buf.definition, opts)
+	makeKeymap('n', 'K', vim.lsp.buf.hover, opts)
+	makeKeymap('n', 'gi', vim.lsp.buf.implementation, opts)
+	makeKeymap('n', '<C-k>', vim.lsp.buf.signature_help, opts)
+	makeKeymap('n', '<space>wa', vim.lsp.buf.add_workspace_folder, opts)
+	makeKeymap('n', '<space>wr', vim.lsp.buf.remove_workspace_folder, opts)
+	makeKeymap('n', '<space>wl', function()
+		print(vim.inspect(vim.lsp.buf.list_workspace_folders()))
+	end, opts)
+	makeKeymap('n', '<space>D', vim.lsp.buf.type_definition, opts)
+	makeKeymap('n', '<space>rn', vim.lsp.buf.rename, opts)
+	makeKeymap({ 'n', 'v' }, '<space>ca', vim.lsp.buf.code_action, opts)
+	makeKeymap('n', 'gr', vim.lsp.buf.references, opts)
+	makeKeymap('n', '<space>f', function()
+		vim.lsp.buf.format { async = true }
+	end, opts)
+end
+
 keymaps.setForMode = function(_mode, _maps)
 	for _, set in pairs(_maps) do
 		if set.plugin and NvimConfig.plugins.list[set.plugin].enabled == false then

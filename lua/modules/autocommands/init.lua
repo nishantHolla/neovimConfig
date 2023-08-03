@@ -41,6 +41,15 @@ autocommands.list = {
 		group = autocommands.groups.editing,
 		description = 'Remove trailing white spaces before saving',
 	},
+
+	{
+		event = 'LspAttach',
+		callback = function(ev)
+			NvimConfig.keymaps.lspKeymaps(ev)
+		end,
+		group = autocommands.groups.editing,
+		description = 'Bind lsp keymaps if lsp server is attached'
+	}
 }
 
 autocommands.set = function()

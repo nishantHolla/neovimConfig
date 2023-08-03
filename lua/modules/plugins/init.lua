@@ -55,7 +55,38 @@ plugins.list = {
 		hasConfig = true,
 		description = 'File manager plugin'
 	},
-	
+
+	['lspConfig'] = {
+		'neovim/nvim-lspconfig',
+		enabled = true,
+		hasConfig = false,
+		description = 'Language server protocol '
+	},
+
+	['mason'] = {
+		'williamboman/mason.nvim',
+		enabled = true,
+		hasConfig = false,
+		description = 'Langauge server management'
+	},
+
+	['nvimCmp'] = {
+		'hrsh7th/nvim-cmp',
+		dependencies = {
+			'neovim/nvim-lspconfig',
+			'hrsh7th/cmp-nvim-lsp',
+			'hrsh7th/cmp-buffer',
+			'hrsh7th/cmp-path',
+			'hrsh7th/cmp-cmdline',
+			'hrsh7th/cmp-vsnip',
+			'hrsh7th/vim-vsnip',
+			'hrsh7th/cmp-nvim-lsp-signature-help'
+		},
+		enabled = true,
+		hasConfig = true,
+		description = 'Completion tool'
+	}
+
 }
 
 plugins.set = function()
