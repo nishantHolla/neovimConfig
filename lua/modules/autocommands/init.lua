@@ -6,7 +6,7 @@ local makeAutoCommand = vim.api.nvim_create_autocmd
 local makeAutoGroup = vim.api.nvim_create_augroup
 
 autocommands.groups = {
-	editing = makeAutoGroup('editing', {clear = true}),
+	editing = makeAutoGroup('editing', { clear = true }),
 }
 
 autocommands.list = {

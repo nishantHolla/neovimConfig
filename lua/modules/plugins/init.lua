@@ -27,8 +27,8 @@ plugins.list = {
 		description = 'Statusline plugin'
 	},
 
-	['nighfox'] = {
-		'EdenEast/nightfox.nvim',
+	['kanagawa'] = {
+		'rebelot/kanagawa.nvim',
 		enabled = true,
 		hasConfig = false,
 		description = 'Colorscheme'
@@ -93,6 +93,20 @@ plugins.list = {
 		enabled = true,
 		hasConfig = true,
 		description = 'Completion tool'
+	},
+
+	['comment'] = {
+		'numToStr/Comment.nvim',
+		enabled = true,
+		hasConfig = true,
+		description = 'Comment plugin'
+	},
+
+	['hop'] = {
+		'phaazon/hop.nvim',
+		enabled = true,
+		hasConfig = true,
+		description = 'Movement plugin'
 	}
 
 }
