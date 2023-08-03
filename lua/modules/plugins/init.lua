@@ -27,6 +27,13 @@ plugins.list = {
 		description = 'Statusline plugin'
 	},
 
+	['nighfox'] = {
+		'EdenEast/nightfox.nvim',
+		enabled = true,
+		hasConfig = false,
+		description = 'Colorscheme'
+	},
+
 	['bufferline'] = {
 		'akinsho/bufferline.nvim',
 		enabled = true,
