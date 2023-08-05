@@ -34,11 +34,18 @@ plugins.list = {
 		description = 'Colorscheme'
 	},
 
-	['bufferline'] = {
-		'akinsho/bufferline.nvim',
+	['telescope'] = {
+		'nvim-telescope/telescope.nvim',
+		dependencies = {
+			'nvim-lua/plenary.nvim',
+			{
+				'nvim-telescope/telescope-fzf-native.nvim',
+				build = 'cmake -S. -Bbuild -DCMAKE_BUILD_TYPE=Release && cmake --build build --config Release && cmake --install build --prefix build'
+			}
+		},
 		enabled = true,
 		hasConfig = true,
-		description = 'Bufferline plugin'
+		description = 'Find, filter, preview, pick'
 	},
 
 	['autoPairs'] = {
@@ -57,7 +64,7 @@ plugins.list = {
 
 	['lf'] = {
 		'lmburns/lf.nvim',
-		dependencies = {'akinsho/toggleterm.nvim'},
+		dependencies = { 'akinsho/toggleterm.nvim' },
 		enabled = true,
 		hasConfig = true,
 		description = 'File manager plugin'
@@ -107,6 +114,13 @@ plugins.list = {
 		enabled = true,
 		hasConfig = true,
 		description = 'Movement plugin'
+	},
+
+	['gitSigns'] = {
+		'lewis6991/gitsigns.nvim',
+		enabled = true,
+		hasConfig = true,
+		description = 'Show git changes'
 	}
 
 }
