@@ -13,5 +13,10 @@ functions.closeBuffer = function()
 	end
 end
 
+functions.openTelescope = function(_pickerName)
+	local theme = 'ivy'
+	vim.cmd('Telescope ' .. _pickerName .. ' theme=' .. theme)
+end
+
 
 return functions

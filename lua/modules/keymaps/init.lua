@@ -61,7 +61,7 @@ keymaps.normalMode = {
 	{
 		groupName = 'Toggleterm plugin',
 		plugin = 'toggleTerm',
-		{ "<leader>'", ':ToggleTerm<cr>', keymaps.snr, 'Toggle terminal' }
+		{ '<a-`>', ':ToggleTerm<cr>', keymaps.snr, 'Toggle terminal' }
 	},
 
 	{
@@ -69,7 +69,14 @@ keymaps.normalMode = {
 		plugin = 'hop',
 		{ 'f',         ':HopChar1CurrentLine<cr>', keymaps.snr, 'Hop in current line' },
 		{ '<leader>f', ':HopAnywhereMW<cr>',       keymaps.snr, 'Hop anywhere' },
-	}
+	},
+
+	{
+		groupName = 'Telescope plugin',
+		plugin = 'telescope',
+		{ '<leader>t', ':lua NvimConfig.functions.openTelescope("builtin")<cr>', keymaps.snr, 'Open Telescope' },
+		{ '<leader>b', ':lua NvimConfig.functions.openTelescope("buffers")<cr>', keymaps.snr, 'Open Telescope' },
+	},
 
 }
 
@@ -122,7 +129,7 @@ keymaps.terminalMode = {
 	{
 		groupName = 'Toggleterm plugin',
 		plugin = 'toggleTerm',
-		{ "<leader>'", [[<c-\><c-n>:ToggleTerm<cr>]], keymaps.snr, 'Toggle terminal' }
+		{ '<a-`>', [[<c-\><c-n>:ToggleTerm<cr>]], keymaps.snr, 'Toggle terminal' }
 	}
 }
 
