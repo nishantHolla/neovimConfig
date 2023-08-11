@@ -29,7 +29,11 @@ autocommands.list = {
 	{
 		event = 'BufWinEnter',
 		pattern = '?*',
-		command = 'silent! loadview',
+		callback = function()
+			if vim.bo.filetype ~= "gitcommit" then
+				vim.cmd('silent! loadview')
+			end
+		end,
 		group = autocommands.groups.editing,
 		description = 'Load file state if it exists',
 	},
@@ -49,7 +53,15 @@ autocommands.list = {
 		end,
 		group = autocommands.groups.editing,
 		description = 'Bind lsp keymaps if lsp server is attached'
+	},
+
+	{
+		event = 'FileType',
+		pattern = {'markdown', 'text', 'gitcommit'},
+		command = 'setlocal spell | setlocal wrap',
+		description = 'Set options for text type file types'
 	}
+
 }
 
 autocommands.set = function()
