@@ -121,6 +121,13 @@ plugins.list = {
 		enabled = true,
 		hasConfig = true,
 		description = 'Show git changes'
+	},
+
+	['treesitter'] = {
+		'nvim-treesitter/nvim-treesitter',
+		enabled = true,
+		hasConfig = true,
+		description = 'Syntax highlighting'
 	}
 
 }

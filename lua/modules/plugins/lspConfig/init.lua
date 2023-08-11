@@ -14,3 +14,7 @@ lspConfig['lua_ls'].setup({
 lspConfig['pyright'].setup({
 	capabilities = capabilities,
 })
+
+lspConfig['tsserver'].setup({
+	capabilities = capabilities,
+})
