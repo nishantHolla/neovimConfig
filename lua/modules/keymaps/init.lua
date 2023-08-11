@@ -61,7 +61,7 @@ keymaps.normalMode = {
 	{
 		groupName = 'Toggleterm plugin',
 		plugin = 'toggleTerm',
-		{ '<a-`>', ':ToggleTerm<cr>', keymaps.snr, 'Toggle terminal' }
+		{ '<a-`>', [[:ToggleTerm<cr><c-\><c-n>i]], keymaps.snr, 'Toggle terminal' }
 	},
 
 	{
