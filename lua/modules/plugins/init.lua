@@ -91,6 +91,7 @@ plugins.list = {
 			'hrsh7th/cmp-nvim-lsp',
 			'hrsh7th/cmp-buffer',
 			'hrsh7th/cmp-path',
+			'delphinus/cmp-ctags',
 			'hrsh7th/cmp-cmdline',
 			'hrsh7th/cmp-vsnip',
 			'hrsh7th/vim-vsnip',
@@ -128,6 +129,28 @@ plugins.list = {
 		enabled = true,
 		hasConfig = true,
 		description = 'Syntax highlighting'
+	},
+
+	['nvimDap'] = {
+		'mfussenegger/nvim-dap',
+		dependencies = {'rcarriga/nvim-dap-ui'},
+		enabled = true,
+		hasConfig = true,
+		description = 'Debug adapter protocol'
+	},
+
+	['guessIndent'] = {
+		'NMAC427/guess-indent.nvim',
+		enabled = true,
+		hasConfig = true;
+		description = 'Guess the indentation of the file'
+	},
+
+	['colorizer'] = {
+		'norcalli/nvim-colorizer.lua',
+		enabled = true,
+		hasConfig = true,
+		description = 'Colorize color string'
 	}
 
 }
