@@ -154,6 +154,15 @@ keymaps.lspKeymaps = function(ev)
 	end, opts)
 end
 
+keymaps.dapKeymaps = function()
+	local opts = {silent = true, noremap = true}
+	makeKeymap('n', '<leader>1', ':lua require("dap").toggle_breakpoint()<cr>', opts)
+	makeKeymap('n', '<leader>2', ':lua require("dap").step_into()<cr>', opts)
+	makeKeymap('n', '<leader>3', ':lua require("dap").continue()<cr>', opts)
+	makeKeymap('n', '<leader>4', ':lua require("dap").step_over()<cr>', opts)
+	makeKeymap('n', '<leader>0', ':lua require("dap").repl.open()<cr>', opts)
+end
+
 keymaps.setForMode = function(_mode, _maps)
 	for _, set in pairs(_maps) do
 		if set.plugin and NvimConfig.plugins.list[set.plugin].enabled == false then
@@ -169,6 +178,8 @@ keymaps.setForMode = function(_mode, _maps)
 
 		::continue::
 	end
+
+	keymaps.dapKeymaps();
 end
 
 keymaps.set = function()
