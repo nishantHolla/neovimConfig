@@ -14,7 +14,8 @@ require('nvim-treesitter.configs').setup({
 		'gitcommit',
 		'bash',
 		'cmake',
-		'make'
+		'make',
+		'ruby'
 	},
 
 	highlight = {

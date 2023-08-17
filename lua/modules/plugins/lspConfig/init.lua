@@ -18,3 +18,11 @@ lspConfig['pyright'].setup({
 lspConfig['tsserver'].setup({
 	capabilities = capabilities,
 })
+
+lspConfig['cssls'].setup({
+	capabilities = capabilities,
+})
+
+lspConfig['solargraph'].setup({
+	capabilities = capabilities,
+})

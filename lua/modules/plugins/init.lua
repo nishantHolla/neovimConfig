@@ -133,7 +133,7 @@ plugins.list = {
 
 	['nvimDap'] = {
 		'mfussenegger/nvim-dap',
-		dependencies = {'rcarriga/nvim-dap-ui'},
+		dependencies = {'rcarriga/nvim-dap-ui', 'suketa/nvim-dap-ruby'},
 		enabled = true,
 		hasConfig = true,
 		description = 'Debug adapter protocol'
@@ -151,6 +151,13 @@ plugins.list = {
 		enabled = true,
 		hasConfig = true,
 		description = 'Colorize color string'
+	},
+
+	['liveServer'] = {
+		'barrett-ruth/live-server.nvim',
+		enabled = true,
+		hasConfig = true,
+		description = 'Refresh html page on save'
 	}
 
 }
@@ -164,6 +171,10 @@ plugins.set = function()
 				require('modules.plugins.' .. pluginName)
 			end
 		end
+
+		plugin.enabled = nil
+		plugin.hasConfig = nil
+		plugin.description = nil
 
 		table.insert(lazyPlugins, plugin)
 	end
