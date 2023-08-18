@@ -40,7 +40,8 @@ plugins.list = {
 			'nvim-lua/plenary.nvim',
 			{
 				'nvim-telescope/telescope-fzf-native.nvim',
-				build = 'cmake -S. -Bbuild -DCMAKE_BUILD_TYPE=Release && cmake --build build --config Release && cmake --install build --prefix build'
+				build =
+				'cmake -S. -Bbuild -DCMAKE_BUILD_TYPE=Release && cmake --build build --config Release && cmake --install build --prefix build'
 			}
 		},
 		enabled = true,
@@ -133,7 +134,7 @@ plugins.list = {
 
 	['nvimDap'] = {
 		'mfussenegger/nvim-dap',
-		dependencies = {'rcarriga/nvim-dap-ui', 'suketa/nvim-dap-ruby'},
+		dependencies = { 'rcarriga/nvim-dap-ui', 'suketa/nvim-dap-ruby' },
 		enabled = true,
 		hasConfig = true,
 		description = 'Debug adapter protocol'
@@ -142,7 +143,7 @@ plugins.list = {
 	['guessIndent'] = {
 		'NMAC427/guess-indent.nvim',
 		enabled = true,
-		hasConfig = true;
+		hasConfig = true,
 		description = 'Guess the indentation of the file'
 	},
 
@@ -158,6 +159,20 @@ plugins.list = {
 		enabled = true,
 		hasConfig = true,
 		description = 'Refresh html page on save'
+	},
+
+	['miniSelection'] = {
+		'echasnovski/mini.ai',
+		enabled = true,
+		hasConfig = true,
+		description = 'Enhance a and i in nvim'
+	},
+
+	['indentLines'] = {
+		'lukas-reineke/indent-blankline.nvim',
+		enabled = true,
+		hasConfig = true,
+		description = 'File indentation'
 	}
 
 }
