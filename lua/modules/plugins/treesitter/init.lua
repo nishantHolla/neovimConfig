@@ -15,6 +15,8 @@ require('nvim-treesitter.configs').setup({
 		'bash',
 		'cmake',
 		'make',
+		'markdown',
+		'markdown_inline',
 		'ruby'
 	},
 

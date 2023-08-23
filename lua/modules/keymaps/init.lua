@@ -78,6 +78,12 @@ keymaps.normalMode = {
 		{ '<leader>b', ':lua NvimConfig.functions.openTelescope("buffers")<cr>', keymaps.snr, 'Open Telescope' },
 	},
 
+	{
+		groupName = 'Aerial plugin',
+		plugin = 'aerial',
+		{'<leader>a', ':AerialToggle<cr>', keymaps.snr, 'Toggle Aerial'}
+	},
+
 }
 
 keymaps.insertMode = {

@@ -18,5 +18,4 @@ functions.openTelescope = function(_pickerName)
 	vim.cmd('Telescope ' .. _pickerName .. ' theme=' .. theme)
 end
 
-
 return functions

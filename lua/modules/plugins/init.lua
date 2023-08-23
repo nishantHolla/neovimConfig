@@ -173,9 +173,29 @@ plugins.list = {
 		enabled = true,
 		hasConfig = true,
 		description = 'File indentation'
+	},
+
+	['aerial'] = {
+		'stevearc/aerial.nvim',
+		enabled = true,
+		hasConfig = true,
+		description = 'Code outline'
+	},
+
+	['nvimWebDev'] = {
+		'nvim-tree/nvim-web-devicons',
+		enabled = true,
+		hasConfig = true,
+		description = 'Icons'
 	}
 
 }
+
+local tableCopy = function(_from, _to)
+	for k, v in pairs(_from) do
+		_to[k] = v
+	end
+end
 
 plugins.set = function()
 	local lazyPlugins = {}
@@ -187,11 +207,14 @@ plugins.set = function()
 			end
 		end
 
-		plugin.enabled = nil
-		plugin.hasConfig = nil
-		plugin.description = nil
+		local p = {}
+		tableCopy(plugin, p)
 
-		table.insert(lazyPlugins, plugin)
+		p.enabled = nil
+		p.hasConfig = nil
+		p.description = nil
+
+		table.insert(lazyPlugins, p)
 	end
 
 	require('lazy').setup(lazyPlugins)
