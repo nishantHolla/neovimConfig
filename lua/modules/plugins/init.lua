@@ -38,6 +38,7 @@ plugins.list = {
 		'nvim-telescope/telescope.nvim',
 		dependencies = {
 			'nvim-lua/plenary.nvim',
+			'BurntSushi/ripgrep',
 			{
 				'nvim-telescope/telescope-fzf-native.nvim',
 				build =
@@ -187,6 +188,13 @@ plugins.list = {
 		enabled = true,
 		hasConfig = true,
 		description = 'Icons'
+	},
+
+	['nvimSpectre'] = {
+		'nvim-pack/nvim-spectre',
+		enabled = true,
+		hasConfig = false,
+		description = 'Search and replace'
 	}
 
 }
