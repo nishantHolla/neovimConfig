@@ -27,6 +27,13 @@ plugins.list = {
 		description = 'Statusline plugin'
 	},
 
+	['bufferline'] = {
+		'akinsho/bufferline.nvim',
+		enabled = true,
+		hasConfig = true,
+		description = 'Bufferline plugin'
+	},
+
 	['kanagawa'] = {
 		'rebelot/kanagawa.nvim',
 		enabled = true,
