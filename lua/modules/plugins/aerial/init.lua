@@ -1,4 +1,3 @@
--- Aerial plugin
 
 require('aerial').setup({
 	backends = { "treesitter", "lsp", "markdown", "man" },

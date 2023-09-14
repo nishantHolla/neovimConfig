@@ -1,4 +1,3 @@
--- colorizer plugin
 
 -- This option is set by options module also, but this plugin requires the option to be set
 -- before initializing

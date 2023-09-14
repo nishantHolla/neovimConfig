@@ -1,4 +1,3 @@
--- lf plugin
 
 vim.cmd('let g:lf_netrw=1')
 

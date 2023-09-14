@@ -1,4 +1,3 @@
--- NvimCmp plugin
 
 local cmp = require('cmp')
 

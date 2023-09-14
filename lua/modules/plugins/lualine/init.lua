@@ -1,4 +1,3 @@
--- Lualine plugin
 
 require('lualine').setup({
 	options = {
