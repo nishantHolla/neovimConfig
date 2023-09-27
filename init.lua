@@ -1,4 +1,3 @@
-
 NvimConfig = {}
 
 -- load modules

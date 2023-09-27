@@ -1,4 +1,3 @@
-
 require('nvim-treesitter.configs').setup({
 	ensure_installed = {
 		'c',
@@ -16,10 +15,10 @@ require('nvim-treesitter.configs').setup({
 		'make',
 		'markdown',
 		'markdown_inline',
-		'ruby'
+		'ruby',
 	},
 
 	highlight = {
-		enable = true
-	}
+		enable = true,
+	},
 })

@@ -5,9 +5,9 @@ local keymaps = {}
 local makeKeymap = vim.keymap.set
 
 keymaps.leader = ','
-keymaps.snr = { silent = true, noremap = true, }
-keymaps.nr = { silent = false, noremap = false, }
-keymaps.s = { slient = true, noremap = false, }
+keymaps.snr = { silent = true, noremap = true }
+keymaps.nr = { silent = false, noremap = false }
+keymaps.s = { slient = true, noremap = false }
 
 keymaps.normalMode = {
 	{
@@ -26,25 +26,44 @@ keymaps.normalMode = {
 
 	{
 		groupName = 'Quick actions',
-		{ '<leader>ss', ':w<cr>',                                      keymaps.snr, 'Write current buffer' },
-		{ '<leader>sa', ':wa<cr>',                                     keymaps.snr, 'Write all open buffers' },
-		{ '<leader>qq', ':lua NvimConfig.functions.closeBuffer()<cr>', keymaps.snr, 'Close current buffer' },
-		{ '<leader>qa', ':qa<cr>',                                     keymaps.snr, 'Close all open buffers' },
+		{
+			'<leader>ss',
+			':w<cr>',
+			keymaps.snr,
+			'Write current buffer',
+		},
+		{
+			'<leader>sa',
+			':wa<cr>',
+			keymaps.snr,
+			'Write all open buffers',
+		},
+		{
+			'<leader>qq',
+			':lua NvimConfig.functions.closeBuffer()<cr>',
+			keymaps.snr,
+			'Close current buffer',
+		},
+		{
+			'<leader>qa',
+			':qa<cr>',
+			keymaps.snr,
+			'Close all open buffers',
+		},
 	},
 
 	{
 		groupName = 'Deletion',
-		{ 'd',         '"_d', keymaps.snr, 'Delete without poluting the register' },
-		{ 'D',         '"_D', keymaps.snr, 'Delete forward without poluting the register' },
-		{ 'c',         '"_c', keymaps.snr, 'Change without poluting the register' },
-		{ 'C',         '"_C', keymaps.snr, 'Change forward with poluting the register' },
-		{ 'x',         '"_x', keymaps.snr, 'Remove without poluting the register' },
+		{ 'd', '"_d', keymaps.snr, 'Delete without poluting the register' },
+		{ 'D', '"_D', keymaps.snr, 'Delete forward without poluting the register' },
+		{ 'c', '"_c', keymaps.snr, 'Change without poluting the register' },
+		{ 'C', '"_C', keymaps.snr, 'Change forward with poluting the register' },
+		{ 'x', '"_x', keymaps.snr, 'Remove without poluting the register' },
 
-		{ '<leader>d', 'd',   keymaps.snr, 'Delete and polute the register' },
-		{ '<leader>D', 'D',   keymaps.snr, 'Delete forward and polute the register' },
-		{ '<leader>c', 'c',   keymaps.snr, 'Change and polute the register' },
-		{ '<leader>C', 'C',   keymaps.snr, 'Change forward and polute the register' },
-
+		{ '<leader>d', 'd', keymaps.snr, 'Delete and polute the register' },
+		{ '<leader>D', 'D', keymaps.snr, 'Delete forward and polute the register' },
+		{ '<leader>c', 'c', keymaps.snr, 'Change and polute the register' },
+		{ '<leader>C', 'C', keymaps.snr, 'Change forward and polute the register' },
 	},
 
 	{
@@ -55,81 +74,104 @@ keymaps.normalMode = {
 	{
 		groupName = 'Nvim lf plugin',
 		plugin = 'lf',
-		{ '<leader>;', ':Lf<cr>', keymaps.snr, 'Open file manager' }
+		{ '<leader>;', ':Lf<cr>', keymaps.snr, 'Open file manager' },
 	},
 
 	{
 		groupName = 'Toggleterm plugin',
 		plugin = 'toggleTerm',
-		{ '<a-`>', [[:ToggleTerm<cr><c-\><c-n>i]], keymaps.snr, 'Toggle terminal' }
+		{ '<a-`>', [[:ToggleTerm<cr><c-\><c-n>i]], keymaps.snr, 'Toggle terminal' },
 	},
 
 	{
 		groupName = 'Hop plugin',
 		plugin = 'hop',
-		{ 'f',         ':HopChar1CurrentLine<cr>', keymaps.snr, 'Hop in current line' },
-		{ '<leader>f', ':HopAnywhereMW<cr>',       keymaps.snr, 'Hop anywhere' },
+		{ 'f', ':HopChar1CurrentLine<cr>', keymaps.snr, 'Hop in current line' },
+		{ '<leader>f', ':HopAnywhereMW<cr>', keymaps.snr, 'Hop anywhere' },
 	},
 
 	{
 		groupName = 'Telescope plugin',
 		plugin = 'telescope',
-		{ '<leader>t', ':lua NvimConfig.functions.openTelescope("builtin")<cr>', keymaps.snr, 'Open Telescope' },
-		{ '<leader>b', ':lua NvimConfig.functions.openTelescope("buffers")<cr>', keymaps.snr, 'Open Telescope' },
+		{
+			'<leader>t',
+			':lua NvimConfig.functions.openTelescope("builtin")<cr>',
+			keymaps.snr,
+			'Open Telescope',
+		},
+		{
+			'<leader>b',
+			':lua NvimConfig.functions.openTelescope("buffers")<cr>',
+			keymaps.snr,
+			'Open Telescope',
+		},
 	},
 
 	{
 		groupName = 'Aerial plugin',
 		plugin = 'aerial',
-		{'<leader>a', ':AerialToggle<cr>', keymaps.snr, 'Toggle Aerial'}
+		{ '<leader>a', ':AerialToggle<cr>', keymaps.snr, 'Toggle Aerial' },
 	},
 
 	{
 		groupName = 'NvimSpectre plugin',
 		plugin = 'nvimSpectre',
-		{ '<leader>S', '<cmd>lua require("spectre").toggle()<CR>', keymaps.nr, 'Toggle nvim spectre' },
-		{ '<leader>sw', '<cmd>lua require("spectre").open_visual({select_word=true})<CR>', keymaps.snr, 'Seach current word nvim spectre' },
-		{ '<leader>sp', '<cmd>lua require("spectre").open_file_search({select_word=true})<CR>', keymaps.snr, 'Search on current file nvim spectre'},
-	}
-
+		{
+			'<leader>S',
+			'<cmd>lua require("spectre").toggle()<CR>',
+			keymaps.nr,
+			'Toggle nvim spectre',
+		},
+		{
+			'<leader>sw',
+			'<cmd>lua require("spectre").open_visual({select_word=true})<CR>',
+			keymaps.snr,
+			'Seach current word nvim spectre',
+		},
+		{
+			'<leader>sp',
+			'<cmd>lua require("spectre").open_file_search({select_word=true})<CR>',
+			keymaps.snr,
+			'Search on current file nvim spectre',
+		},
+	},
 }
 
 keymaps.insertMode = {
 	{
 		groupName = 'Mode movement',
-		{ '<leader><leader>', '<esc>', keymaps.snr, 'Move to normal mode' }
+		{ '<leader><leader>', '<esc>', keymaps.snr, 'Move to normal mode' },
 	},
 
 	{
 		groupName = 'Text movement',
-		{ '<a-h>', '<left>',  keymaps.snr, 'Move left by one character' },
-		{ '<a-j>', '<down>',  keymaps.snr, 'Move down by one character' },
-		{ '<a-k>', '<up>',    keymaps.snr, 'Move right by one character' },
+		{ '<a-h>', '<left>', keymaps.snr, 'Move left by one character' },
+		{ '<a-j>', '<down>', keymaps.snr, 'Move down by one character' },
+		{ '<a-k>', '<up>', keymaps.snr, 'Move right by one character' },
 		{ '<a-l>', '<right>', keymaps.snr, 'Move up by one character' },
-	}
+	},
 }
 
 keymaps.visualMode = {
 	{
 		groupName = 'Deletion',
-		{ 'd',         '"_d', keymaps.snr, 'Delete without poluting the register' },
-		{ 'D',         '"_D', keymaps.snr, 'Delete forward without poluting the register' },
-		{ 'c',         '"_c', keymaps.snr, 'Change without poluting the register' },
-		{ 'C',         '"_C', keymaps.snr, 'Change forward with poluting the register' },
-		{ 'x',         '"_x', keymaps.snr, 'Remove without poluting the register' },
+		{ 'd', '"_d', keymaps.snr, 'Delete without poluting the register' },
+		{ 'D', '"_D', keymaps.snr, 'Delete forward without poluting the register' },
+		{ 'c', '"_c', keymaps.snr, 'Change without poluting the register' },
+		{ 'C', '"_C', keymaps.snr, 'Change forward with poluting the register' },
+		{ 'x', '"_x', keymaps.snr, 'Remove without poluting the register' },
 
-		{ '<leader>d', 'd',   keymaps.snr, 'Delete and polute the register' },
-		{ '<leader>D', 'D',   keymaps.snr, 'Delete forward and polute the register' },
-		{ '<leader>c', 'c',   keymaps.snr, 'Change and polute the register' },
-		{ '<leader>C', 'C',   keymaps.snr, 'Change forward and polute the register' },
-
+		{ '<leader>d', 'd', keymaps.snr, 'Delete and polute the register' },
+		{ '<leader>D', 'D', keymaps.snr, 'Delete forward and polute the register' },
+		{ '<leader>c', 'c', keymaps.snr, 'Change and polute the register' },
+		{ '<leader>C', 'C', keymaps.snr, 'Change forward and polute the register' },
 	},
 }
 
 keymaps.terminalMode = {
 	{
 		groupName = 'Mode movement',
-		{ '<leader><leader>', [[<c-\><c-n>]], keymaps.snr, 'Move to normal mode' }
+		{ '<leader><leader>', [[<c-\><c-n>]], keymaps.snr, 'Move to normal mode' },
 	},
 
 	{
@@ -143,9 +185,8 @@ keymaps.terminalMode = {
 	{
 		groupName = 'Toggleterm plugin',
 		plugin = 'toggleTerm',
-		{ '<a-`>', [[<c-\><c-n>:ToggleTerm<cr>]], keymaps.snr, 'Toggle terminal' }
+		{ '<a-`>', [[<c-\><c-n>:ToggleTerm<cr>]], keymaps.snr, 'Toggle terminal' },
 	},
-
 }
 
 keymaps.lspKeymaps = function(ev)
@@ -165,12 +206,12 @@ keymaps.lspKeymaps = function(ev)
 	makeKeymap({ 'n', 'v' }, '<leader>lca', vim.lsp.buf.code_action, opts)
 	makeKeymap('n', 'gr', vim.lsp.buf.references, opts)
 	makeKeymap('n', '<leader>lf', function()
-		vim.lsp.buf.format { async = true }
+		vim.lsp.buf.format({ async = true })
 	end, opts)
 end
 
 keymaps.dapKeymaps = function()
-	local opts = {silent = true, noremap = true}
+	local opts = { silent = true, noremap = true }
 	makeKeymap('n', '<leader>1', ':lua require("dap").toggle_breakpoint()<cr>', opts)
 	makeKeymap('n', '<leader>2', ':lua require("dap").step_into()<cr>', opts)
 	makeKeymap('n', '<leader>3', ':lua require("dap").continue()<cr>', opts)
@@ -194,7 +235,7 @@ keymaps.setForMode = function(_mode, _maps)
 		::continue::
 	end
 
-	keymaps.dapKeymaps();
+	keymaps.dapKeymaps()
 end
 
 keymaps.set = function()

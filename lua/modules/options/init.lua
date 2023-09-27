@@ -3,7 +3,7 @@
 local options = {}
 
 options.list = {
-	colorcolumn = "100",
+	colorcolumn = '100',
 	confirm = true,
 	ignorecase = true,
 	number = true,

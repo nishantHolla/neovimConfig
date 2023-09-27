@@ -1,10 +1,11 @@
-
 local cmp = require('cmp')
 
 local has_words_before = function()
 	unpack = unpack or table.unpack
 	local line, col = unpack(vim.api.nvim_win_get_cursor(0))
-	return col ~= 0 and vim.api.nvim_buf_get_lines(0, line - 1, line, true)[1]:sub(col, col):match("%s") == nil
+	return col ~= 0
+		and vim.api.nvim_buf_get_lines(0, line - 1, line, true)[1]:sub(col, col):match('%s')
+			== nil
 end
 
 local feedkey = function(key, mode)
@@ -14,7 +15,7 @@ end
 cmp.setup({
 	snippet = {
 		expand = function(args)
-			vim.fn["vsnip#anonymous"](args.body)
+			vim.fn['vsnip#anonymous'](args.body)
 		end,
 	},
 
@@ -26,50 +27,53 @@ cmp.setup({
 		['<a-e>'] = cmp.mapping.abort(),
 		['<a-;>'] = cmp.mapping.confirm({ select = true }),
 		['<a-]>'] = cmp.mapping(function(fallback)
-			if vim.fn["vsnip#available"](1) == 1 then
-				feedkey("<Plug>(vsnip-expand-or-jump)", "")
+			if vim.fn['vsnip#available'](1) == 1 then
+				feedkey('<Plug>(vsnip-expand-or-jump)', '')
 			else
 				fallback() -- The fallback function sends a already mapped key. In this case, it's probably `<Tab>`.
 			end
-		end, { "i", "s" }),
+		end, { 'i', 's' }),
 
 		['<a-[>'] = cmp.mapping(function(fallback)
-			if vim.fn["vsnip#jumpable"](-1) == 1 then
-				feedkey("<Plug>(vsnip-jump-prev)", "")
+			if vim.fn['vsnip#jumpable'](-1) == 1 then
+				feedkey('<Plug>(vsnip-jump-prev)', '')
 			else
 				fallback()
 			end
-		end, { "i", "s" }),
-
+		end, { 'i', 's' }),
 	}),
 
-	sources = cmp.config.sources(
+	sources = cmp.config.sources({
+		{ name = 'nvim_lsp' },
+		{ name = 'nvim_lsp_signature_help' },
+		{ name = 'vsnip' },
+		{ name = 'ctags' },
 		{
-			{ name = 'nvim_lsp' },
-			{ name = 'nvim_lsp_signature_help' },
-			{ name = 'vsnip' },
-			{ name = 'ctags' },
-			{ name = 'buffer', option = { get_bufnrs = function() return vim.api.nvim_list_bufs() end } },
-			{ name = 'path' }
+			name = 'buffer',
+			option = {
+				get_bufnrs = function()
+					return vim.api.nvim_list_bufs()
+				end,
+			},
 		},
-		{}
-	)
+		{ name = 'path' },
+	}, {}),
 })
 
 cmp.setup.cmdline({ '/', '?' }, {
 	mapping = cmp.mapping.preset.cmdline(),
 	sources = {
-		{ name = 'buffer' }
-	}
+		{ name = 'buffer' },
+	},
 })
 
 cmp.setup.cmdline(':', {
 	mapping = cmp.mapping.preset.cmdline(),
 	sources = cmp.config.sources({
-		{ name = 'path' }
+		{ name = 'path' },
 	}, {
-		{ name = 'cmdline' }
-	})
+		{ name = 'cmdline' },
+	}),
 })
 
 require('modules.plugins.mason')

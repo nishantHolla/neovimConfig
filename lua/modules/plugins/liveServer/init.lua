@@ -1,2 +1,1 @@
-
 require('live-server').setup()

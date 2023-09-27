@@ -1,5 +1,4 @@
-
-local dap, dapui = require("dap"), require("dapui")
+local dap, dapui = require('dap'), require('dapui')
 
 dap.adapters.python = function(cb, config)
 	if config.request == 'attach' then
@@ -18,7 +17,8 @@ dap.adapters.python = function(cb, config)
 	else
 		cb({
 			type = 'executable',
-			command = os.getenv('HOME') .. '/.local/share/nvim/mason/packages/debugpy/venv/bin/python3',
+			command = os.getenv('HOME')
+				.. '/.local/share/nvim/mason/packages/debugpy/venv/bin/python3',
 			args = { '-m', 'debugpy.adapter' },
 			options = {
 				source_filetype = 'python',
@@ -30,13 +30,13 @@ end
 dap.configurations.python = {
 	{
 		-- The first three options are required by nvim-dap
-		type = 'python'; -- the type here established the link to the adapter definition: `dap.adapters.python`
-		request = 'launch';
-		name = "Launch file";
+		type = 'python', -- the type here established the link to the adapter definition: `dap.adapters.python`
+		request = 'launch',
+		name = 'Launch file',
 
 		-- Options below are for debugpy, see https://github.com/microsoft/debugpy/wiki/Debug-configuration-settings for supported options
 
-		program = "${file}"; -- This configuration will launch the current file if used.
+		program = '${file}', -- This configuration will launch the current file if used.
 		pythonPath = function()
 			-- debugpy supports launching an application with a different interpreter then the one used to launch debugpy itself.
 			-- The code below looks for a `venv` or `.venv` folder in the current directly and uses the python within.
@@ -49,6 +49,6 @@ dap.configurations.python = {
 			else
 				return '/usr/bin/python'
 			end
-		end;
+		end,
 	},
 }

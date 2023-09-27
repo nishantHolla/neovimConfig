@@ -4,14 +4,14 @@ local plugins = {}
 
 -- bootstrap lazy plugin manager
 
-local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
+local lazypath = vim.fn.stdpath('data') .. '/lazy/lazy.nvim'
 if not vim.loop.fs_stat(lazypath) then
 	vim.fn.system({
-		"git",
-		"clone",
-		"--filter=blob:none",
-		"https://github.com/folke/lazy.nvim.git",
-		"--branch=stable", -- latest stable release
+		'git',
+		'clone',
+		'--filter=blob:none',
+		'https://github.com/folke/lazy.nvim.git',
+		'--branch=stable', -- latest stable release
 		lazypath,
 	})
 end
@@ -24,21 +24,21 @@ plugins.list = {
 		'nvim-lualine/lualine.nvim',
 		enabled = true,
 		hasConfig = true,
-		description = 'Statusline plugin'
+		description = 'Statusline plugin',
 	},
 
 	['bufferline'] = {
 		'akinsho/bufferline.nvim',
 		enabled = true,
 		hasConfig = true,
-		description = 'Bufferline plugin'
+		description = 'Bufferline plugin',
 	},
 
 	['kanagawa'] = {
 		'rebelot/kanagawa.nvim',
 		enabled = true,
 		hasConfig = true,
-		description = 'Colorscheme'
+		description = 'Colorscheme',
 	},
 
 	['telescope'] = {
@@ -48,27 +48,26 @@ plugins.list = {
 			'BurntSushi/ripgrep',
 			{
 				'nvim-telescope/telescope-fzf-native.nvim',
-				build =
-				'cmake -S. -Bbuild -DCMAKE_BUILD_TYPE=Release && cmake --build build --config Release && cmake --install build --prefix build'
-			}
+				build = 'cmake -S. -Bbuild -DCMAKE_BUILD_TYPE=Release && cmake --build build --config Release && cmake --install build --prefix build',
+			},
 		},
 		enabled = true,
 		hasConfig = true,
-		description = 'Find, filter, preview, pick'
+		description = 'Find, filter, preview, pick',
 	},
 
 	['autoPairs'] = {
 		'jiangmiao/auto-pairs',
 		enabled = true,
 		hasConfig = false,
-		description = 'Autopair plugin'
+		description = 'Autopair plugin',
 	},
 
 	['toggleTerm'] = {
 		'akinsho/toggleterm.nvim',
 		enabled = true,
 		hasConfig = true,
-		description = 'Terminal plugin'
+		description = 'Terminal plugin',
 	},
 
 	['lf'] = {
@@ -76,21 +75,21 @@ plugins.list = {
 		dependencies = { 'akinsho/toggleterm.nvim' },
 		enabled = true,
 		hasConfig = true,
-		description = 'File manager plugin'
+		description = 'File manager plugin',
 	},
 
 	['lspConfig'] = {
 		'neovim/nvim-lspconfig',
 		enabled = true,
 		hasConfig = false,
-		description = 'Language server protocol '
+		description = 'Language server protocol ',
 	},
 
 	['mason'] = {
 		'williamboman/mason.nvim',
 		enabled = true,
 		hasConfig = false,
-		description = 'Langauge server management'
+		description = 'Langauge server management',
 	},
 
 	['nvimCmp'] = {
@@ -105,39 +104,39 @@ plugins.list = {
 			'hrsh7th/cmp-vsnip',
 			'hrsh7th/vim-vsnip',
 			'hrsh7th/cmp-nvim-lsp-signature-help',
-			'rafamadriz/friendly-snippets'
+			'rafamadriz/friendly-snippets',
 		},
 		enabled = true,
 		hasConfig = true,
-		description = 'Completion tool'
+		description = 'Completion tool',
 	},
 
 	['comment'] = {
 		'numToStr/Comment.nvim',
 		enabled = true,
 		hasConfig = true,
-		description = 'Comment plugin'
+		description = 'Comment plugin',
 	},
 
 	['hop'] = {
 		'phaazon/hop.nvim',
 		enabled = true,
 		hasConfig = true,
-		description = 'Movement plugin'
+		description = 'Movement plugin',
 	},
 
 	['gitSigns'] = {
 		'lewis6991/gitsigns.nvim',
 		enabled = true,
 		hasConfig = true,
-		description = 'Show git changes'
+		description = 'Show git changes',
 	},
 
 	['treesitter'] = {
 		'nvim-treesitter/nvim-treesitter',
 		enabled = true,
 		hasConfig = true,
-		description = 'Syntax highlighting'
+		description = 'Syntax highlighting',
 	},
 
 	['nvimDap'] = {
@@ -145,72 +144,71 @@ plugins.list = {
 		dependencies = { 'rcarriga/nvim-dap-ui', 'suketa/nvim-dap-ruby' },
 		enabled = true,
 		hasConfig = true,
-		description = 'Debug adapter protocol'
+		description = 'Debug adapter protocol',
 	},
 
 	['guessIndent'] = {
 		'NMAC427/guess-indent.nvim',
 		enabled = true,
 		hasConfig = true,
-		description = 'Guess the indentation of the file'
+		description = 'Guess the indentation of the file',
 	},
 
 	['colorizer'] = {
 		'norcalli/nvim-colorizer.lua',
 		enabled = true,
 		hasConfig = true,
-		description = 'Colorize color string'
+		description = 'Colorize color string',
 	},
 
 	['liveServer'] = {
 		'barrett-ruth/live-server.nvim',
 		enabled = true,
 		hasConfig = true,
-		description = 'Refresh html page on save'
+		description = 'Refresh html page on save',
 	},
 
 	['miniSelection'] = {
 		'echasnovski/mini.ai',
 		enabled = true,
 		hasConfig = true,
-		description = 'Enhance a and i in nvim'
+		description = 'Enhance a and i in nvim',
 	},
 
 	['indentLines'] = {
 		'lukas-reineke/indent-blankline.nvim',
 		enabled = true,
 		hasConfig = true,
-		description = 'File indentation'
+		description = 'File indentation',
 	},
 
 	['aerial'] = {
 		'stevearc/aerial.nvim',
 		enabled = true,
 		hasConfig = true,
-		description = 'Code outline'
+		description = 'Code outline',
 	},
 
 	['nvimWebDev'] = {
 		'nvim-tree/nvim-web-devicons',
 		enabled = true,
 		hasConfig = true,
-		description = 'Icons'
+		description = 'Icons',
 	},
 
 	['nvimSpectre'] = {
 		'nvim-pack/nvim-spectre',
 		enabled = true,
 		hasConfig = false,
-		description = 'Search and replace'
+		description = 'Search and replace',
 	},
 
 	['formatter'] = {
 		'mhartington/formatter.nvim',
 		enabled = true,
 		hasConfig = true,
-		description = 'File formatter'
-	}
-
+		description = 'File formatter',
+	},
 }
 
 local tableCopy = function(_from, _to)
