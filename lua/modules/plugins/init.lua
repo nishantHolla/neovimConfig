@@ -37,7 +37,7 @@ plugins.list = {
 	['kanagawa'] = {
 		'rebelot/kanagawa.nvim',
 		enabled = true,
-		hasConfig = false,
+		hasConfig = true,
 		description = 'Colorscheme'
 	},
 
@@ -202,6 +202,13 @@ plugins.list = {
 		enabled = true,
 		hasConfig = false,
 		description = 'Search and replace'
+	},
+
+	['formatter'] = {
+		'mhartington/formatter.nvim',
+		enabled = true,
+		hasConfig = true,
+		description = 'File formatter'
 	}
 
 }
