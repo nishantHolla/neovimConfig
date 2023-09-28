@@ -1,6 +1,6 @@
 require('kanagawa').setup({
-	compile = true,
-	transparent = true,
-	terminalColors = true,
-	dimInactive = true,
+    compile = true,
+    transparent = true,
+    terminalColors = true,
+    dimInactive = true,
 })

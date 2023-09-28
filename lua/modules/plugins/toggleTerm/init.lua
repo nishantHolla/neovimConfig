@@ -1,3 +1,3 @@
 require('toggleterm').setup({
-	direction = 'horizontal',
+    direction = 'horizontal',
 })
