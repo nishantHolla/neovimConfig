@@ -112,29 +112,6 @@ keymaps.normalMode = {
         plugin = 'aerial',
         { '<leader>a', ':AerialToggle<cr>', keymaps.snr, 'Toggle Aerial' },
     },
-
-    {
-        groupName = 'NvimSpectre plugin',
-        plugin = 'nvimSpectre',
-        {
-            '<leader>S',
-            '<cmd>lua require("spectre").toggle()<CR>',
-            keymaps.nr,
-            'Toggle nvim spectre',
-        },
-        {
-            '<leader>sw',
-            '<cmd>lua require("spectre").open_visual({select_word=true})<CR>',
-            keymaps.snr,
-            'Seach current word nvim spectre',
-        },
-        {
-            '<leader>sp',
-            '<cmd>lua require("spectre").open_file_search({select_word=true})<CR>',
-            keymaps.snr,
-            'Search on current file nvim spectre',
-        },
-    },
 }
 
 keymaps.insertMode = {

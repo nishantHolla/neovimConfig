@@ -203,13 +203,6 @@ plugins.list = {
         description = 'Icons',
     },
 
-    ['nvimSpectre'] = {
-        'nvim-pack/nvim-spectre',
-        enabled = true,
-        hasConfig = false,
-        description = 'Search and replace',
-    },
-
     ['formatter'] = {
         'mhartington/formatter.nvim',
         enabled = true,
