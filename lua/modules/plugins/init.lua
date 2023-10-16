@@ -182,13 +182,6 @@ plugins.list = {
         description = 'File indentation',
     },
 
-    ['aerial'] = {
-        'stevearc/aerial.nvim',
-        enabled = true,
-        hasConfig = true,
-        description = 'Code outline',
-    },
-
     ['nvimWebDev'] = {
         'nvim-tree/nvim-web-devicons',
         enabled = true,

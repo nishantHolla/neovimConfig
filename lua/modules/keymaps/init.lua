@@ -106,12 +106,6 @@ keymaps.normalMode = {
             'Open Telescope',
         },
     },
-
-    {
-        groupName = 'Aerial plugin',
-        plugin = 'aerial',
-        { '<leader>a', ':AerialToggle<cr>', keymaps.snr, 'Toggle Aerial' },
-    },
 }
 
 keymaps.insertMode = {
