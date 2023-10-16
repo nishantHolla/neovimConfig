@@ -41,6 +41,13 @@ plugins.list = {
         description = 'Colorscheme',
     },
 
+    ['nightfox'] = {
+        'EdenEast/nightfox.nvim',
+        enabled = true,
+        hasConfig = true,
+        description = 'Colorscheme',
+    },
+
     ['telescope'] = {
         'nvim-telescope/telescope.nvim',
         dependencies = {
@@ -208,6 +215,13 @@ plugins.list = {
         enabled = true,
         hasConfig = true,
         description = 'File formatter',
+    },
+
+    ['autotag'] = {
+        'windwp/nvim-ts-autotag',
+        enabled = true,
+        hasConfig = true,
+        description = 'Auto close tags',
     },
 }
 

@@ -64,7 +64,7 @@ autocommands.list = {
 
     {
         event = 'BufWritePost',
-        pattern = { '?*.lua' },
+        pattern = { '?*.lua', '?*.cpp', '?*.hpp', '?*.js', '?*.py', '?*.jsx' },
         command = 'FormatWrite',
         description = 'Format files after saving',
     },

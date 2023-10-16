@@ -5,8 +5,6 @@ require('formatter').setup({
     log_level = vim.log.levels.WARN,
     filetype = {
         lua = {
-            require('formatter.filetypes.lua').stylua,
-
             function()
                 if util.get_current_buffer_file_name() == 'special.lua' then
                     return nil
@@ -27,21 +25,56 @@ require('formatter').setup({
         },
 
         cpp = {
-            require('formatter.filetypes.cpp').clangformat,
-
             function()
+                local path = os.getenv('XDG_CONFIG_HOME')
+                    .. '/nvim/lua/modules/plugins/formatter/clang-format'
                 return {
                     exe = 'clang-format',
+                    stdin = true,
+                    args = {
+                        '--style=file:' .. path,
+                    },
+                }
+            end,
+        },
+
+        python = {
+            function()
+                return {
+                    exe = 'black',
+                    args = { '-q', '-' },
                     stdin = true,
                 }
             end,
         },
 
-        -- Use the special "*" filetype for defining formatter configurations on
-        -- any filetype
+        javascript = {
+            function()
+                return {
+                    exe = 'prettier',
+                    args = {
+                        util.escape_path(util.get_current_buffer_file_path()),
+                        '--tab-width 4',
+                    },
+                    stdin = true,
+                }
+            end,
+        },
+
+        javascriptreact = {
+            function()
+                return {
+                    exe = 'prettier',
+                    args = {
+                        util.escape_path(util.get_current_buffer_file_path()),
+                        '--tab-width 4',
+                    },
+                    stdin = true,
+                }
+            end,
+        },
+
         ['*'] = {
-            -- "formatter.filetypes.any" defines default configurations for any
-            -- filetype
             require('formatter.filetypes.any').remove_trailing_whitespace,
         },
     },
