@@ -74,6 +74,19 @@ require('formatter').setup({
             end,
         },
 
+        css = {
+            function()
+                return {
+                    exe = 'prettier',
+                    args = {
+                        util.escape_path(util.get_current_buffer_file_path()),
+                        '--tab-width 4',
+                    },
+                    stdin = true,
+                }
+            end,
+        },
+
         ['*'] = {
             require('formatter.filetypes.any').remove_trailing_whitespace,
         },
