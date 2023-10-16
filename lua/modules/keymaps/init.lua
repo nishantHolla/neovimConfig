@@ -166,6 +166,16 @@ keymaps.visualMode = {
         { '<leader>c', 'c', keymaps.snr, 'Change and polute the register' },
         { '<leader>C', 'C', keymaps.snr, 'Change forward and polute the register' },
     },
+    {
+        groupName = 'Searching and replacing',
+        { '/', [["0y<escape>/<c-r>0]], keymaps.nr, 'Search selected text' },
+        { '<leader>:s', [["0y<escape>:%s/<c-r>0/]], keymaps.nr, 'Replace selected text' },
+    },
+    {
+        groupName = 'Text movement',
+        { '<a-s>', [[:m '>+1<CR>gv=gv]], keymaps.snr, 'Move selected text down by one line' },
+        { '<a-d>', [[:m '<-2<CR>gv=gv]], keymaps.snr, 'Move selected text up by one line' },
+    },
 }
 
 keymaps.terminalMode = {
