@@ -34,13 +34,6 @@ plugins.list = {
         description = 'Bufferline plugin',
     },
 
-    ['kanagawa'] = {
-        'rebelot/kanagawa.nvim',
-        enabled = true,
-        hasConfig = true,
-        description = 'Colorscheme',
-    },
-
     ['nightfox'] = {
         'EdenEast/nightfox.nvim',
         enabled = true,
