@@ -2,7 +2,7 @@
 
 local theme = {}
 
-theme.colorscheme = 'kanagawa-wave'
+theme.colorscheme = 'nightfox'
 
 theme.set = function()
     vim.cmd('colorscheme ' .. theme.colorscheme)
