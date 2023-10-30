@@ -104,7 +104,7 @@ plugins.list = {
             'hrsh7th/cmp-vsnip',
             'hrsh7th/vim-vsnip',
             'hrsh7th/cmp-nvim-lsp-signature-help',
-            'rafamadriz/friendly-snippets',
+            'f3fora/cmp-spellrafamadriz/friendly-snippets',
         },
         enabled = true,
         hasConfig = true,
@@ -201,6 +201,13 @@ plugins.list = {
         enabled = true,
         hasConfig = true,
         description = 'Auto close tags',
+    },
+
+    ['dresser'] = {
+        'stevearc/dressing.nvim',
+        enabled = true,
+        hasConfig = true,
+        description = 'Input prompt',
     },
 }
 
