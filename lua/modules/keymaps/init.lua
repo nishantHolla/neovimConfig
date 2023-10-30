@@ -20,8 +20,8 @@ keymaps.normalMode = {
 
     {
         groupName = 'Buffer movement',
-        { '<a-,>', ':bp<cr>', keymaps.snr, 'Move to previous buffer' },
-        { '<a-.>', ':bn<cr>', keymaps.snr, 'Move to next buffer' },
+        { '<a-i>', ':bp<cr>', keymaps.snr, 'Move to previous buffer' },
+        { '<a-o>', ':bn<cr>', keymaps.snr, 'Move to next buffer' },
     },
 
     {
@@ -31,6 +31,12 @@ keymaps.normalMode = {
             ':w<cr>',
             keymaps.snr,
             'Write current buffer',
+        },
+        {
+            '<leader>SS',
+            ':noa w<cr>',
+            keymaps.snr,
+            'Write current buffer without autocommands',
         },
         {
             '<leader>sa',
@@ -86,7 +92,7 @@ keymaps.normalMode = {
     {
         groupName = 'Hop plugin',
         plugin = 'hop',
-        { 'f', ':HopChar1CurrentLine<cr>', keymaps.snr, 'Hop in current line' },
+        { '<a-f>', ':HopChar1CurrentLine<cr>', keymaps.snr, 'Hop in current line' },
         { '<leader>f', ':HopAnywhereMW<cr>', keymaps.snr, 'Hop anywhere' },
     },
 
@@ -120,6 +126,11 @@ keymaps.insertMode = {
         { '<a-j>', '<down>', keymaps.snr, 'Move down by one character' },
         { '<a-k>', '<up>', keymaps.snr, 'Move right by one character' },
         { '<a-l>', '<right>', keymaps.snr, 'Move up by one character' },
+    },
+    {
+        groupName = 'Text deletion',
+        { '<a-i>', '<backspace>', keymaps.snr, 'Delete left character' },
+        { '<a-o>', '<delete>', keymaps.snr, 'Delete right character' },
     },
 }
 
