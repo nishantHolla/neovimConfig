@@ -83,3 +83,5 @@ lspConfig['cssls'].setup({
 lspConfig['cmake'].setup({
     capabilities = capabilities,
 })
+
+lspConfig['eslint'].setup({})
