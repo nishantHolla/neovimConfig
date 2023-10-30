@@ -12,4 +12,3 @@ dap.listeners.before.event_exited['dapui_config'] = function()
 end
 
 require('modules.plugins.nvimDap.debugpy')
-require('dap-ruby').setup()
