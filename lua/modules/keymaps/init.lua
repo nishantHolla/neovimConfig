@@ -86,7 +86,24 @@ keymaps.normalMode = {
     {
         groupName = 'Toggleterm plugin',
         plugin = 'toggleTerm',
-        { '<a-`>', [[:ToggleTerm<cr><c-\><c-n>i]], keymaps.snr, 'Toggle terminal' },
+        {
+            '<a-`>',
+            [[:lua NvimConfig.functions.toggleTerm(10)<cr>]],
+            keymaps.snr,
+            'Toggle terminal',
+        },
+        {
+            '<a-1>',
+            [[:lua NvimConfig.functions.toggleTerm(1)<cr>]],
+            keymaps.snr,
+            'Toggle terminal',
+        },
+        {
+            '<a-2>',
+            [[:lua NvimConfig.functions.toggleTerm(2)<cr>]],
+            keymaps.snr,
+            'Toggle terminal',
+        },
     },
 
     {
@@ -177,7 +194,24 @@ keymaps.terminalMode = {
     {
         groupName = 'Toggleterm plugin',
         plugin = 'toggleTerm',
-        { '<a-`>', [[<c-\><c-n>:ToggleTerm<cr>]], keymaps.snr, 'Toggle terminal' },
+        {
+            '<a-`>',
+            [[<c-\><c-n>:lua NvimConfig.functions.toggleTerm(10)<cr>]],
+            keymaps.snr,
+            'Toggle terminal',
+        },
+        {
+            '<a-1>',
+            [[<c-\><c-n>:lua NvimConfig.functions.toggleTerm(1)<cr>]],
+            keymaps.snr,
+            'Toggle terminal',
+        },
+        {
+            '<a-2>',
+            [[<c-\><c-n>:lua NvimConfig.functions.toggleTerm(2)<cr>]],
+            keymaps.snr,
+            'Toggle terminal',
+        },
     },
 }
 
