@@ -109,7 +109,8 @@ keymaps.normalMode = {
     {
         groupName = 'Hop plugin',
         plugin = 'hop',
-        { '<a-f>', ':HopChar1CurrentLine<cr>', keymaps.snr, 'Hop in current line' },
+        { 'f', ':HopChar1CurrentLine<cr>', keymaps.snr, 'Hop in current line' },
+        { '<a-f>', 'f', keymaps.snr, 'Hop in current line' },
         { '<leader>f', ':HopAnywhereMW<cr>', keymaps.snr, 'Hop anywhere' },
     },
 

@@ -18,4 +18,11 @@ functions.openTelescope = function(_pickerName)
     vim.cmd('Telescope ' .. _pickerName .. ' theme=' .. theme)
 end
 
+functions.toggleTerm = function(_number)
+    vim.cmd(tostring(_number) .. 'ToggleTerm')
+    if string.starts(vim.api.nvim_buf_get_name(0), 'term:') then
+        vim.cmd('norm! i')
+    end
+end
+
 return functions
