@@ -72,10 +72,6 @@ lspConfig['pyright'].setup({
     capabilities = capabilities,
 })
 
-lspConfig['tsserver'].setup({
-    capabilities = capabilities,
-})
-
 lspConfig['cssls'].setup({
     capabilities = capabilities,
 })
@@ -84,4 +80,12 @@ lspConfig['cmake'].setup({
     capabilities = capabilities,
 })
 
+lspConfig['tailwindcss'].setup({
+    capabilities = capabilities,
+})
+
+lspConfig['dartls'].setup({})
+
 lspConfig['eslint'].setup({})
+
+lspConfig['astro'].setup({})

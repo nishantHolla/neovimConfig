@@ -1,1 +1,22 @@
 require('mason').setup()
+require('mason-tool-installer').setup({
+    ensure_installed = {
+        'astro-language-server',
+        'black',
+        'clang-format',
+        'clangd',
+        'cmake-language-server',
+        'css-lsp',
+        'dart-debug-adapter',
+        'debugpy',
+        'eslint-lsp',
+        'firefox-debug-adapter',
+        'htmlbeautifier',
+        'lua-language-server',
+        'prettier',
+        'pyright',
+        'stylua',
+        'tailwindcss-language-server',
+        'typescript-language-server',
+    },
+})

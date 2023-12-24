@@ -61,6 +61,33 @@ require('formatter').setup({
             end,
         },
 
+        astro = {
+            function()
+                return {
+                    exe = 'prettier',
+                    args = {
+                        util.escape_path(util.get_current_buffer_file_path()),
+                        '--tab-width 4',
+                    },
+                    stdin = true,
+                }
+            end,
+        },
+
+        typescriptreact = {
+            function()
+                return {
+                    exe = 'prettier',
+                    args = {
+                        util.escape_path(util.get_current_buffer_file_path()),
+                        '--tab-width 4',
+                        '--print-width 80',
+                    },
+                    stdin = true,
+                }
+            end,
+        },
+
         javascriptreact = {
             function()
                 return {
@@ -100,6 +127,14 @@ require('formatter').setup({
             end,
         },
         html = {
+            function()
+                return {
+                    exe = 'htmlbeautifier',
+                    stdin = 1,
+                }
+            end,
+        },
+        svg = {
             function()
                 return {
                     exe = 'htmlbeautifier',

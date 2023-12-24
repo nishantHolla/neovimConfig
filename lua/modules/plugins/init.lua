@@ -85,11 +85,25 @@ plugins.list = {
         description = 'Language server protocol ',
     },
 
+    ['tsTools'] = {
+        'pmizio/typescript-tools.nvim',
+        enabled = true,
+        hasConfig = true,
+        description = 'LSP for typescript',
+        dependencies = {
+            'nvim-lua/plenary.nvim',
+            'neovim/nvim-lspconfig',
+        },
+    },
+
     ['mason'] = {
         'williamboman/mason.nvim',
         enabled = true,
         hasConfig = false,
         description = 'Langauge server management',
+        dependencies = {
+            'WhoIsSethDaniel/mason-tool-installer.nvim',
+        },
     },
 
     ['nvimCmp'] = {
@@ -99,16 +113,26 @@ plugins.list = {
             'hrsh7th/cmp-nvim-lsp',
             'hrsh7th/cmp-buffer',
             'hrsh7th/cmp-path',
+            'hrsh7th/cmp-vsnip',
             'delphinus/cmp-ctags',
             'hrsh7th/cmp-cmdline',
-            'hrsh7th/cmp-vsnip',
             'hrsh7th/vim-vsnip',
-            'hrsh7th/cmp-nvim-lsp-signature-help',
             'f3fora/cmp-spellrafamadriz/friendly-snippets',
+            'roobert/tailwindcss-colorizer-cmp.nvim',
+            'hrsh7th/cmp-nvim-lsp-signature-help',
+            'onsails/lspkind.nvim',
         },
         enabled = true,
         hasConfig = true,
         description = 'Completion tool',
+    },
+
+    ['tailwind'] = {
+        'laytan/tailwind-sorter.nvim',
+        enabled = true,
+        hasConfig = true,
+        build = 'cd formatter && npm i && npm run build',
+        description = 'Plugins for tailwind development',
     },
 
     ['comment'] = {
@@ -155,7 +179,7 @@ plugins.list = {
     },
 
     ['colorizer'] = {
-        'norcalli/nvim-colorizer.lua',
+        'NvChad/nvim-colorizer.lua',
         enabled = true,
         hasConfig = true,
         description = 'Colorize color string',
@@ -182,6 +206,13 @@ plugins.list = {
         description = 'File indentation',
     },
 
+    ['align'] = {
+        'junegunn/vim-easy-align',
+        enabled = true,
+        hasConfig = true,
+        description = 'Alignment plugin',
+    },
+
     ['nvimWebDev'] = {
         'nvim-tree/nvim-web-devicons',
         enabled = true,
@@ -201,6 +232,13 @@ plugins.list = {
         enabled = true,
         hasConfig = true,
         description = 'Auto close tags',
+    },
+
+    ['surround'] = {
+        'kylechui/nvim-surround',
+        enabled = true,
+        hasConfig = true,
+        description = 'Surround selected elements with quotes and brackets',
     },
 
     ['dresser'] = {

@@ -1,5 +1,6 @@
 require('nvim-treesitter.configs').setup({
     ensure_installed = {
+        'astro',
         'c',
         'cpp',
         'python',
@@ -16,6 +17,7 @@ require('nvim-treesitter.configs').setup({
         'markdown',
         'markdown_inline',
         'ruby',
+        'typescript',
     },
 
     highlight = {
