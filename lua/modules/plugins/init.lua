@@ -129,6 +129,9 @@ plugins.list = {
 
     ['tailwind'] = {
         'laytan/tailwind-sorter.nvim',
+        dependencies = {
+            'malbertzard/inline-fold.nvim',
+        },
         enabled = true,
         hasConfig = true,
         build = 'cd formatter && npm i && npm run build',

@@ -63,6 +63,18 @@ autocommands.list = {
     },
 
     {
+        event = 'BufEnter',
+        pattern = { '*.html', '*.tsx', '*.jsx' },
+        callback = function(_)
+            if not require('inline-fold.module').isHidden then
+                vim.cmd('InlineFoldToggle')
+            end
+        end,
+        group = autocommands.groups.editing,
+        description = 'Inline fold for tailwind',
+    },
+
+    {
         event = 'BufWritePost',
         pattern = {
             '?*.lua',
